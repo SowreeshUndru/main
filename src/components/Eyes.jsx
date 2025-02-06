@@ -21,7 +21,7 @@ function Eyes() {
       
   })
   return (
-    <div className='flex justify-center bg-[#315839] h-[100vh] w-[100vw]'>
+    <div className='flex justify-center bg-white h-[100vh] w-[100vw]'>
       <div className=' mt-20 h-[80vh] w-[80vw] flex justify-center items-center bg-cover bg-center bg-[url("../images/canva-green-illustrative-organic-plant-zoom-virtual-background-fpJFOduK3w4.jpg")]'>
 
         <div className='w-[60%] h-1/2  flex gap-20 justify-center items-center'>

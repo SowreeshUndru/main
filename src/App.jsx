@@ -5,6 +5,8 @@ import Mar from './components/Mar';
 import About from './components/about';
 import Eyes from './components/Eyes';
 import Project from './components/project';
+import Links from './components/Links';
+
 export default function App() {
   return (
     <div className='w-full min-h-screen  text-white bg-zinc-900'>
@@ -14,6 +16,8 @@ export default function App() {
      <About/>
      <Eyes/>
      <Project/>
+     <Eyes/>
+     <Links/>
     </div>
     
   )
