@@ -6,10 +6,15 @@ import About from './components/about';
 import Eyes from './components/Eyes';
 import Project from './components/project';
 import Links from './components/Links';
+import LocomotiveScroll from "locomotive-scroll";
 
 export default function App() {
+  const locomotiveScroll = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+  });
   return (
-    <div className='w-full min-h-screen  text-white bg-zinc-900'>
+    <div data-scroll-container className='w-full min-h-screen  text-white bg-zinc-900'>
      <Navbar/>
      <Landing/>
      <Mar/>

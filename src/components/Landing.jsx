@@ -8,7 +8,8 @@ function Landing() {
     }
 
     return (
-        <div className='w-full min-h-screen bg-zinc-900 border-t-1 text-white py-40'>
+        <div  data-scroll
+        data-scroll-speed="-.3" className='w-full min-h-screen bg-zinc-900 border-t-1 text-white py-40'>
             <div className='textstructure mt-20 px-10'>
                 <div className='masker'>
                     <h1 className='uppercase text-6xl leading-tight tracking-tighter font-semibold'>I'M</h1>
