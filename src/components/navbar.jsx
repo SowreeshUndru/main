@@ -24,7 +24,7 @@ function Navbar() {
   return (
     <div
       
-      className={`fixed z-[999] w-full px-20 py-8 font-['Neue Montreal'] flex justify-between items-center transition-all duration-500 ${
+      className={`fixed z-[999] w-full px-20 py-3 font-['Neue Montreal'] backdrop-blur-sm flex justify-between items-center transition-all duration-500 ${
         hidden ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"
       }`}
     >
@@ -35,7 +35,7 @@ function Navbar() {
         src="https://img.icons8.com/ios-filled/50/s-key.png"
         alt="s-key"
       />
-      <div className="links flex gap-10 flex-wrap content-center">
+      <div className=" links flex gap-10 flex-wrap content-center">
         {["Introduction", "Our Work", "About Us", "Projects", "Contacts"].map(
           (item, index) => (
             <a
