@@ -23,6 +23,7 @@ export default function App() {
      <Project/>
      <Eyes/>
      <Links/>
+     
     </div>
     
   )
