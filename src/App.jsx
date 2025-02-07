@@ -7,6 +7,7 @@ import Eyes from './components/Eyes';
 import Project from './components/project';
 import Links from './components/Links';
 import LocomotiveScroll from "locomotive-scroll";
+import Cards from './components/Cards';
 
 export default function App() {
   const locomotiveScroll = new LocomotiveScroll({
@@ -23,6 +24,7 @@ export default function App() {
      <Project/>
      <Eyes/>
      <Links/>
+     <Cards/>
      
     </div>
     

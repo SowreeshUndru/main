@@ -6,10 +6,23 @@ function Landing() {
     function handleMouseOver(index) {
         setHoveredIndex(index); // Set the hovered index
     }
+    const [translate, setTranslate] = useState(-1);
+    const rows = 6;
+    const cols = 6;
 
     return (
-        <div  data-scroll
-        data-scroll-speed="-.3" className='w-full min-h-screen bg-zinc-900 border-t-1 text-white py-40'>
+        <div data-scroll
+            data-scroll-speed="-.3" className='w-full min-h-screen bg-zinc-900 border-t-1 text-white py-40'>
+
+
+
+            {/*  */}
+
+
+            
+
+
+            {/*  */}
             <div className='textstructure mt-20 px-10'>
                 <div className='masker'>
                     <h1 className='uppercase text-6xl leading-tight tracking-tighter font-semibold'>I'M</h1>
@@ -37,9 +50,9 @@ function Landing() {
                                 <h1
                                     key={index}
                                     style={{ backgroundColor: hoveredIndex === index ? 'grey' : 'transparent' }}
-                                    onMouseOver={() => handleMouseOver(index)} 
-                                    onMouseLeave={() => setHoveredIndex(-1)}  
-                                    
+                                    onMouseOver={() => handleMouseOver(index)}
+                                    onMouseLeave={() => setHoveredIndex(-1)}
+
                                     className='px-4 py-2 rounded-full border border-gray-600 bg-zinc-800 text-sm transition-colors duration-300'
                                 >
                                     {item}
