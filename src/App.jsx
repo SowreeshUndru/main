@@ -15,7 +15,7 @@ export default function App() {
     smooth: true,
   });
   return (
-    <div data-scroll-container className='w-full min-h-screen  text-white bg-zinc-900'>
+    <div data-scroll-container className='w-full min-h-screen  text-white bg-zinc-900 overflow-hidden'>
      <Navbar/>
      <Landing/>
      <Mar/>
