@@ -12,17 +12,7 @@ function Landing() {
 
     return (
         <div data-scroll
-            data-scroll-speed="-.3" className='w-full min-h-screen bg-zinc-900 border-t-1 text-white py-40'>
-
-
-
-            {/*  */}
-
-
-            
-
-
-            {/*  */}
+            data-scroll-speed="-.3" className=' relative    w-full min-h-screen bg-zinc-900 border-t-1 text-white py-40'>
             <div className='textstructure mt-20 px-10'>
                 <div className='masker'>
                     <h1 className='uppercase text-6xl leading-tight tracking-tighter font-semibold'>I'M</h1>
@@ -30,7 +20,7 @@ function Landing() {
                 <div className='masker'>
                     <h1 className='uppercase text-6xl leading-tight tracking-tighter font-semibold mb-4'>SOWREESH UNDRU</h1>
                 </div>
-                <div className='masker py-4'>
+                 <div className='masker py-4'>
                     <h1 className='text-lg leading-7 tracking-tight font-medium'>
                         I'm a Full Stack Web Developer with experience in building both the front-end and back-end of web applications. <br />
                         I work with technologies like HTML, CSS, JavaScript, Node.js, and MongoDB to create responsive and efficient websites. <br />
@@ -62,6 +52,8 @@ function Landing() {
                     </div>
                 </div>
             </div>
+
+
         </div>
     );
 }

@@ -2,10 +2,15 @@ import React, { useState, useEffect } from "react";
 
 function Navbar() {
   const [hidden, setHidden] = useState(false); 
+  const [start,setStart]=useState(-1);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
-  
+    
+    
+   
+    
+
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
         setHidden(true); 
@@ -14,17 +19,21 @@ function Navbar() {
       }
       lastScrollY = window.scrollY;
     };
-  
+      
+    
     window.addEventListener("scroll", handleScroll);
-  
    
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   
+  setTimeout(function () {
+    setStart(1);
+  }, 2000);
+  
   return (
     <div
       
-      className={`fixed z-[999] w-full px-20 py-3 font-['Neue Montreal'] backdrop-blur-sm flex justify-between items-center transition-all duration-500 ${
+      className={`fixed z-[999]  w-full px-20 py-3 font-['Neue Montreal'] backdrop-blur-sm flex justify-between items-center transition-all duration-500 ${
         hidden ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"
       }`}
     >
