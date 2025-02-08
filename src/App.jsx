@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './components/navbar';
 import Landing from './components/Landing';
 import Mar from './components/Mar';
-import About from './components/about';
+import About from './components/About';
 import Eyes from './components/Eyes';
 import Project from './components/project';
 import Links from './components/Links';
