@@ -1,65 +1,79 @@
-import React, { useState, useEffect } from "react";
 
-function Navbar() {
-  const [hidden, setHidden] = useState(false); 
-  const [start,setStart]=useState(-1);
+import { easeIn, motion } from 'framer-motion'
+import React, { useState } from 'react'
+import Cards from './Cards.jsx';
 
-  useEffect(() => {
-    let lastScrollY = window.scrollY;
-    
-    
-   
-    
 
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setHidden(true); 
-      } else {
-        setHidden(false); 
-      }
-      lastScrollY = window.scrollY;
-    };
-      
-    
-    window.addEventListener("scroll", handleScroll);
-   
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+function Project() {
   
-  setTimeout(function () {
-    setStart(1);
-  }, 2000);
-  
+  const [hoverindex, setHover] = useState(-1);
+  const [hoverindex1, setHover1] = useState(-1);
+  const [translate, setTranslate] = useState(-1);
+
   return (
-    <div
-      
-      className={`fixed z-[999]  w-full px-20 py-3 font-['Neue Montreal'] backdrop-blur-sm flex justify-between items-center transition-all duration-500 ${
-        hidden ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"
-      }`}
-    >
-      <img
-        className="bg-white rounded-[30%]"
-        width="50"
-        height="50"
-        src="https://img.icons8.com/ios-filled/50/s-key.png"
-        alt="s-key"
-      />
-      <div className=" links flex gap-10 flex-wrap content-center">
-        {["Introduction", "Our Work", "About Us", "Projects", "Contacts"].map(
-          (item, index) => (
-            <a
-              key={index}
-              className={`text-lg capitalize font-light ${
-                index === 4 && "ml-32"
-              }`}
-            >
-              {item}
-            </a>
-          )
-        )}
+    <div onMouseOver={()=>setTranslate(1)} className=' w-[100vw]  bg-[#27272A] px-14 py-7'>
+      <motion.h1  initial={{x:"100%"}} animate={{x:translate==1 ?"0%":"100%"}} transition={{ease:[0.25, 1, 0.5, 1],duration:"1"}} className='text-[500%] uppercase font-["Neue_Montreal"] tracking-tighter border-b-2 border-gray-600'>project</motion.h1>
+
+
+      {/*  project cards -1*/}
+
+
+      <div className=' relative flex flex-wrap h-[100vh] w-full  gap-[6%] items-center  justify-center mb-10'>
+
+        {["tic-tac game", "Snake-Game"].map((item, index) => (
+          <div className='absolute flex overflow-hidden  ' key={index}>
+            {item.split("").map((character, charIndex) => (
+              <motion.span initial={{ y: "100%" }} animate={{ y: hoverindex == index ? "0%" : "100%" }} transition={{ easeIn, duration: charIndex * 0.04 }} key={charIndex} className=" z-2  text-white text-7xl  ">{character}</motion.span>
+            ))}
+          </div>
+        ))}
+
+        <motion.div onMouseEnter={() => setHover(0)} onMouseLeave={() => setHover(-1)} initial={{ scale: "1" }} animate={{ scale: hoverindex == 0 ? "1.04" : "1" }} transition={{ ease: "linear", duration: 0.04 }} className=' z-1 h-[65%]  w-[45%] bg-gray-500 rounded-xl'>
+          <img src="../images/tictac.jpg " className='h-full w-full rounded-xl' alt="tictac game" />
+        </motion.div>
+
+        <motion.div onMouseEnter={() => setHover(1)} onMouseLeave={() => setHover(-1)} initial={{ scale: "1" }} animate={{ scale: hoverindex == 1 ? "1.04" : "1" }} transition={{ ease: [0.25, 1, 0.5, 1], duration: 0.04 }} className='h-[65%] w-[45%] bg-gray-500 rounded-xl rounded-full'>
+         <a href="https://github.com/SowreeshUndru/snake-game"> <img src="../images/snake.jpg" alt="snake project photo" className='h-full w-full rounded-xl' /></a>
+        </motion.div>
+
       </div>
+
+
+      {/*  project cards -2*/}
+
+
+      <div className=' relative flex flex-wrap h-[100vh] w-full  gap-[6%] items-center  justify-center -mt-25 mb-10'>
+
+        {["", "", "E-commerce", "my portfolio"].map((item, index) => (
+          <div className='absolute flex overflow-hidden  ' key={index}>
+            {item.split("").map((character, charIndex) => (
+              <motion.span initial={{ y: "100%" }} animate={{ y: hoverindex1 == index ? "0%" : "100%" }} transition={{ easeIn, duration: charIndex * 0.04 }} key={charIndex} className=" z-2  text-[#989E86] text-7xl ">{character}</motion.span>
+            ))}
+          </div>
+        ))}
+
+        <motion.div onMouseEnter={() => setHover1(2)} onMouseLeave={() => setHover1(-1)} initial={{ scale: "1" }} animate={{ scale: hoverindex1 == 2 ? "1.04" : "1" }} transition={{ ease: "linear", duration: 0.04 }} className=' z-1 h-[65%]  w-[45%] bg-gray-500 rounded-xl'>
+          <a href="https://github.com/SowreeshUndru/e-com"><img src="../images/ecom.jpg " className='h-full w-full rounded-xl' alt="tictac game" /></a>
+        </motion.div>
+
+        <motion.div onMouseEnter={() => setHover1(3)} onMouseLeave={() => setHover1(-1)} initial={{ scale: "1" }} animate={{ scale: hoverindex1 == 3 ? "1.04" : "1" }} transition={{ ease: [0.25, 1, 0.5, 1], duration: 0.04 }} className='h-[65%] w-[45%] bg-[url("./images/bg.jpg")] bg-cover bg-center rounded-xl rounded-full'>
+          <div><a href="https://github.com/SowreeshUndru/main"><img src="./images/portfolio.png" alt="my-portfolio" className=''  /></a></div>
+
+        </motion.div>
+
+      </div>
+
+
+      {/*  project cards -3*/}
+
+
     </div>
-  );
+  )
 }
 
-export default Navbar;
+export default Project
+
+
+
+
+
